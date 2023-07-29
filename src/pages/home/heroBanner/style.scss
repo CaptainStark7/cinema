@@ -1,0 +1,115 @@
+@import "../../../mixins.scss";
+
+.heroBanner {
+  width: 100%;
+  height: 450px;
+  background-color: var(--black);
+  display: flex;
+  align-items: center;
+  position: relative;
+  @include md {
+    height: 700px;
+  }
+  .backdrop-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    overflow: hidden;
+    .lazy-load-image-background {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+  .opacity-layer {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(
+      180deg,
+      rgba(25, 106, 220, 0) 0%,
+      #09082a 79.17%
+    );
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .heroBannerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    .title {
+      font-size: 50px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      @include md {
+        margin-bottom: 0;
+        font-size: 90px;
+      }
+    }
+    .subTitle {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 40px;
+      @include md {
+        font-size: 24px;
+      }
+    }
+    .searchInput {
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      input {
+        width: calc(100% - 120px);
+        height: 45px;
+        background-color: #f2f2f2;
+        outline: 0;
+        border: 2px solid #ccc;
+        border-radius: 25px;
+        padding: 0 15px;
+        font-size: 16px;
+        color: #333;
+
+        @media (min-width: 768px) {
+          width: calc(100% - 180px);
+          height: 55px;
+          font-size: 18px;
+          padding: 0 30px;
+        }
+      }
+
+      button {
+        width: 120px;
+        height: 45px;
+        background: #e7840b;
+        color: white;
+        outline: 0;
+        border: 0;
+        border-radius: 25px;
+        font-size: 18px;
+        cursor: pointer;
+        margin-left: 10px;
+
+        @media (min-width: 768px) {
+          width: 180px;
+          height: 55px;
+          font-size: 20px;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
